@@ -1,24 +1,28 @@
 <template>
-  <div>
-    <ArtistGallery />
+  <div class="test">
+    <NavBar/>
+    <ContentPart/>
   </div>
+
 </template>
 
 <script>
-import ArtistGallery from './components/ArtistGallery.vue';
+import ContentPart from './components/ContentPart.vue';
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: "App",
-  components: { ArtistGallery }
+  components: { 
+    ContentPart,
+    NavBar 
+  }
 }
 </script>
 
 <style>
-/* .artist_gallery {
-    display :flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap : wrap;
-    background: rgb(192, 192, 192);
-  } */
+.test{
+  display: flex;
+  flex-direction: row;
+}
+
 </style>
