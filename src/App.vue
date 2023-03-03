@@ -1,8 +1,6 @@
 <template>
-  <div class="test">
     <NavBar/>
     <ContentPart/>
-  </div>
 
 </template>
 
@@ -20,9 +18,5 @@ export default {
 </script>
 
 <style>
-.test{
-  display: flex;
-  flex-direction: row;
-}
 
 </style>

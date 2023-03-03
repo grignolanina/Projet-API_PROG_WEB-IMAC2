@@ -21,7 +21,8 @@ export default {
 	display: flex;
 	flex-direction: row;
 	margin: 1%;
-	width: 30%;
+	width: 20vw;
+	height: 20vh;
 	background-color: rgb(203, 203, 203);
 }
 
@@ -45,6 +46,10 @@ export default {
 }
 
 h2 {
-	font-size: 20px;
+	font-size: 1em;
+}
+
+p{
+	font-size: 0.8em;
 }
 </style>

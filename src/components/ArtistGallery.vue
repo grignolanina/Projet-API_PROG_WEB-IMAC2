@@ -3,11 +3,6 @@
 		<ArtistCard />
 		<ArtistCard />
 		<ArtistCard />
-		<ArtistCard />
-		<ArtistCard />
-		<ArtistCard />
-		<ArtistCard />
-		<ArtistCard />
 	</div>
 </template>
 
@@ -23,7 +18,6 @@ export default {
 <style>
 .artist_gallery {
 	display: flex;
-	flex-direction: row;
 	flex-wrap: wrap;
 	background: white;
 }

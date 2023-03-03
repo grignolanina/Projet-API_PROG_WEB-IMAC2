@@ -17,10 +17,10 @@ export default {
 .nav-background{
   display: flex;
   background: rgb(203, 203, 203);
-  width: 40%;
+  width: 25%;
   justify-content: center;
-  /* position: fixed;
-  height: 100%; */
+  position: fixed;
+  height: 100%;
 
 }
 .nav-list{
