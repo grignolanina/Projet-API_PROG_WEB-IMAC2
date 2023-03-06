@@ -35,9 +35,6 @@ main{
 	position: absolute;
 }
 
-header{
-	margin: 2% 5%;
-}
 section{
 	margin: 2% 5%;
 }

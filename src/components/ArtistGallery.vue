@@ -19,6 +19,5 @@ export default {
 .artist_gallery {
 	display: flex;
 	flex-wrap: wrap;
-	background: white;
 }
 </style>

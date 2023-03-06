@@ -1,6 +1,6 @@
 <template>
 	<a href="#" class="artist-card">
-		<img class="picture" src="http://media.nrj.fr/1900x1200/2016/09/christophemae-jpg-8806288.jpg" />
+		<img class="artist-picture" src="http://media.nrj.fr/1900x1200/2016/09/christophemae-jpg-8806288.jpg" />
 		<div class="infos">
 			<h2 class="name">Christophe Maé</h2>
 			<p class="style">Pop française</p>
@@ -20,21 +20,24 @@ export default {
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;
+	/* justify-content: space-between; */
+	flex: auto;
 	margin: 1%;
-	width: 20vw;
-	height: 20vh;
+	/* width: 20vw;
+	height: 20vh; */
 	background-color: rgb(203, 203, 203);
 }
 
 .infos{
 	display: flex;
+	flex:auto;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
 	padding: 0 5%;
 }
 
-.picture {
+.artist-picture {
 	object-fit: cover;
 	border-radius: 20px;
 	width: 100px;

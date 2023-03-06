@@ -11,6 +11,7 @@ export default {
 </script>
 <style>
 #searchbox {
+	/* margin: 2% 5%; */
     width: 100%;
 	background:#6F4BF2;
     /* margin: 0px 0px 0px 12px; */
