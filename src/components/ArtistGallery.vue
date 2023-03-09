@@ -17,19 +17,22 @@
 		/>
 	</div>
 	
-	<!-- <div class="artist_gallery">
+	<!-- OK AVEC L'API DISNEY
+	<div class="artist_gallery">
 		<ArtistCard 
 			:name="mData[0]?.name"
-			:style="mData[0]?.style"
-			:pictureUrl="mData[0]?.pictureUrl"
+			:imageUrl="mData[0]?.imageUrl"
 		/>
+		<p>{{ mData }}</p>
 		
 	</div> -->
+
+
 </template>
 
 <script>
 import ArtistCard from './ArtistCard.vue';
-import { getArtistData } from '@/assets/services/api/artistAPI';
+import { getArtistsData } from '@/assets/services/api/artistAPI';
 
 export default {
 	name: "ArtistGallery",
@@ -46,14 +49,17 @@ export default {
 	},
 	methods:{
 		getData() {
-			this.artistsData = getArtistData()
+			this.artistsData = getArtistsData()
 		}
 	}
 
 }
 
+
+
+// OK AVEC L API DISNEY
 // import ArtistCard from './ArtistCard.vue';
-// import { getApi } from '@/assets/services/api/spotifyAPI';
+// import { getApiDisney } from '@/assets/services/api/artistAPI';
 
 // export default {
 // 	name: "ArtistGallery",
@@ -70,10 +76,10 @@ export default {
 // 	},
 // 	methods:{
 // 		async getData() {
-// 			this.mData = await getApi()
+// 			this.mData = await getApiDisney()
+// 			this.mData = this.mData["data"]
 // 		}
 // 	}
-
 // }
 </script>
 

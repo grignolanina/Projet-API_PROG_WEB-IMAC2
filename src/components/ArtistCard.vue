@@ -6,6 +6,8 @@
 			<p class="style">Pop française</p>
 		</div>
 	</a> -->
+
+
 	<a href="#" class="artist-card">
 		<img class="artist-picture" :src="pictureUrl" />
 		<div class="infos">
@@ -13,6 +15,16 @@
 			<p class="style">{{style}}</p>
 		</div>
 	</a>
+
+	<!-- OK AVEC API DISNEY -->
+	<!-- <a href="#" class="artist-card">
+		<img class="artist-picture" :src="imageUrl" />
+		<div class="infos">
+			<h2 class="name">{{name}}</h2>
+		</div>
+	</a> -->
+
+
 </template>
 
 <script>
@@ -24,6 +36,16 @@ export default {
 		pictureUrl: String 
 	}
 }
+
+
+//OK AVEC API DISNEY
+// export default {
+// 	name: "ArtistCard",
+// 	props : {
+// 		name: String,
+// 		imageUrl: String,
+// 	}
+// }
 </script>
 
 <style>
