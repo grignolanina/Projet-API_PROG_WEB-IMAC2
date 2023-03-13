@@ -1,4 +1,5 @@
 <template>
+	<!-- sans dynamisme -->
 	<!-- <a href="#" class="artist-card">
 		<img class="artist-picture" src="http://media.nrj.fr/1900x1200/2016/09/christophemae-jpg-8806288.jpg" />
 		<div class="infos">
@@ -7,45 +8,53 @@
 		</div>
 	</a> -->
 
+	<!-- donnees avec tab perso -->
+	<!-- <a href="#" class="artist-card">
+		<img class="artist-picture" :src="pictureUrl" />
+		<div class="infos">
+			<h2 class="name">{{name}}</h2>
+			<p class="style">{{style}}</p>
+		</div>
+	</a> -->
+
+	<!-- donnees avec api spotify -->
+	<!-- <a href="#" class="artist-card">
+		<div class="infos">
+			<h2 class="name">{{name}}</h2>
+		</div>
+	</a> -->
 
 	<a href="#" class="artist-card">
-		<img class="artist-picture" :src="pictureUrl" />
+		<img class="artist-picture" :src="imageUrl" />
 		<div class="infos">
 			<h2 class="name">{{name}}</h2>
 			<p class="style">{{style}}</p>
 		</div>
 	</a>
 
-	<!-- OK AVEC API DISNEY -->
-	<!-- <a href="#" class="artist-card">
-		<img class="artist-picture" :src="imageUrl" />
-		<div class="infos">
-			<h2 class="name">{{name}}</h2>
-		</div>
-	</a> -->
-
-
 </template>
 
 <script>
-export default {
-	name: "ArtistCard",
-	props : {
-		name: String,
-		style: String,
-		pictureUrl: String 
-	}
-}
-
-
-//OK AVEC API DISNEY
+//donnee avec tab perso
 // export default {
 // 	name: "ArtistCard",
 // 	props : {
 // 		name: String,
-// 		imageUrl: String,
+// 		style: String,
+// 		pictureUrl: String 
 // 	}
 // }
+
+//donnee avec api spotify
+export default {
+	name: "ArtistCard",
+	props : {
+		imageUrl: String,
+		name: String,
+		style: String
+	}
+}
+
 </script>
 
 <style>

@@ -1,5 +1,6 @@
 <template>
-	<div class="artist_gallery">
+	<!-- ok avec données crée perso -->
+	<!-- <div class="artist_gallery">
 		<ArtistCard 
 			:name="artistsData[0].name"
 			:style="artistsData[0].style"
@@ -15,51 +16,39 @@
 			:style="artistsData[2].style"
 			:pictureUrl="artistsData[2].pictureUrl"
 		/>
-	</div>
+	</div> -->
+
+
 	
-	<!-- OK AVEC L'API DISNEY
+
+	<!-- donnee avec api spotify -->
 	<div class="artist_gallery">
 		<ArtistCard 
-			:name="mData[0]?.name"
-			:imageUrl="mData[0]?.imageUrl"
+		:imageUrl="artistData['images'][0]['url']" 
+		:name="artistData['name']" 
+		:style="artistData['genres'][0]"
 		/>
-		<p>{{ mData }}</p>
+
+		<ArtistCard 
+		:imageUrl="artistData['images'][0]['url']" 
+		:name="artistData['name']" 
+		:style="artistData['genres'][0]"
+		/>
 		
-	</div> -->
+		<ArtistCard 
+		:imageUrl="artistData['images'][0]['url']" 
+		:name="artistData['name']" 
+		:style="artistData['genres'][0]"
+		/>
+	</div>
 
 
 </template>
 
 <script>
-import ArtistCard from './ArtistCard.vue';
-import { getArtistsData } from '@/assets/services/api/artistAPI';
-
-export default {
-	name: "ArtistGallery",
-	components: { 
-		ArtistCard
-	},
-	data(){
-		return {
-			artistsData:[]
-		}
-	},
-	created() {
-		this.getData()
-	},
-	methods:{
-		getData() {
-			this.artistsData = getArtistsData()
-		}
-	}
-
-}
-
-
-
-// OK AVEC L API DISNEY
+//OK AVEC DONNEE CREE PERSO
 // import ArtistCard from './ArtistCard.vue';
-// import { getApiDisney } from '@/assets/services/api/artistAPI';
+// import { getArtistsData } from '@/assets/services/api/artistAPI';
 
 // export default {
 // 	name: "ArtistGallery",
@@ -68,19 +57,46 @@ export default {
 // 	},
 // 	data(){
 // 		return {
-// 			mData:[]
+// 			artistsData:[]
 // 		}
 // 	},
 // 	created() {
 // 		this.getData()
 // 	},
 // 	methods:{
-// 		async getData() {
-// 			this.mData = await getApiDisney()
-// 			this.mData = this.mData["data"]
+// 		getData() {
+// 			this.artistsData = getArtistsData()
 // 		}
 // 	}
+
 // }
+
+
+//donnee avec api spotify
+import ArtistCard from './ArtistCard.vue';
+import { getApiTrackMacklemore } from '@/assets/services/api/artistAPI';
+
+export default {
+	name: "ArtistGallery",
+	components: { 
+		ArtistCard
+	},
+	data(){
+		return {
+			artistData:[]
+		}
+	},
+	created() {
+		this.getData()
+	},
+
+	methods:{
+		async getData() {
+			this.artistData = await getApiTrackMacklemore()
+		}
+	}
+
+}
 </script>
 
 <style>

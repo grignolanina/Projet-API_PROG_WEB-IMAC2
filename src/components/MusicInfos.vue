@@ -1,5 +1,5 @@
 <template>
-	<div class="music-line">
+	<!-- <div class="music-line">
 		
 		<div class="music-data">
 			<p class="music-classement">1</p>
@@ -8,15 +8,36 @@
 		</div>
 		
 
-		<p class="music-auditor">4 593345</p>
+		<p class="music-released">4 593345</p>
 
 		<p class="music-time">2:43</p>
+	</div> -->
+
+	<div class="music-line">
+		
+		<div class="music-data">
+			<p class="music-classement">{{ musicClassement }}</p>
+			<img class="music-cover" v-bind:src="pictureUrl"/>
+			<p class="music-title">{{ title }}</p>
+		</div>
+		
+
+		<p class="music-released">{{releasedDate}}</p>
+
+		<p class="music-time">{{time}} s</p>
 	</div>
 	
 </template>
 <script>
 export default{
-	name: "MusicInfos"
+	name: "MusicInfos",
+	props : {
+		musicClassement: String,
+		pictureUrl: String,
+		title:String,
+		releasedDate:String,
+		time:String
+	}
 }
 
 
@@ -29,26 +50,27 @@ export default{
 	align-items: end;
 	margin: 2% 0;
 	flex-wrap: wrap;
+	padding-bottom: 2%;
+	border-bottom: solid 1px #6F4BF2;
 }
 
 .music-data{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: start;
 	align-items: end;
 	flex:2;
 }
 .music-cover{
 	object-fit: cover;
 	border-radius: 100px;
-	width: 5vh;
-	height: 5vh;
+	width: 4vh;
+	height: 4vh;
+	margin: 0 5%;
 }
-/* .music-classement, .music-cover, .music-title{
-	padding: 0 5% 0 0;
-} */
 
-.music-auditor{
+
+.music-released{
 	display: flex;
 	justify-content: end;
 	flex:1;

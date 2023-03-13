@@ -5,13 +5,15 @@
 		</header>
 		<section>
 			<h1>Recherche récentes</h1>
-			<ArtistGallery />
+			<ArtistGallery/>
 		</section>
 		<section>
 			<h1>Tendances</h1>
-			<ArtistGallery />
 			<ArtistGallery/>
 			<ArtistGallery/>
+			<ArtistGallery/>
+
+			
 		</section>
 	</main>
 </template>

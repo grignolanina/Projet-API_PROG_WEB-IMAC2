@@ -15,9 +15,30 @@ function getArtistsData() {
 // 	return response.json()
 // }
 
+let myToken="BQARMk9tNE12Sf2dD7YlQaY8A-LNSNFVGTReQDBl96T3jhg5ztkyWzkEqdqpvdBqIKPvDbO0oLOKUsgMSgb4CkWCJLxGOoUL42FaCodwdK0oe6kjjEv1"
+
 
 async function getApiTrackMacklemore() {
-	let myToken = "BQDY6mS640YDRix5xHU8AJ3M9vg5KlccXfVbMzYaZgI7fDHrrlA1GP6yNyMs9MiZ8AsrXpa99fEBseZHb_Fgj0mEz-jX1S-sJiIPRv7DZU6FufEqaXiP"
+
+	let response = await fetch(
+		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY",
+		{
+			method: "GET", // or GET, PUT, DELETE, etc.
+			headers: {
+				"Accept": "application/json",
+				"Content-Type": "application/json", // to have JSON content in body
+				'Authorization': 'Bearer ' + myToken, // set JWT token
+			},
+			// body: JSON.stringify(myData) // set JSON data in request body
+		}
+
+		
+	)
+	return response.json()
+}
+
+//rajoute en param id
+async function getTopTrack() {
 
 	let response = await fetch(
 		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY/top-tracks?market=fr",
@@ -33,12 +54,34 @@ async function getApiTrackMacklemore() {
 
 		
 	)
-	console.log(response)
 	return response.json()
 }
 
-// export{ getApiDisney }
+async function getAlbums() {
+
+	let response = await fetch(
+		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY/albums?market=FR&limit=12",
+		{
+			method: "GET", // or GET, PUT, DELETE, etc.
+			headers: {
+				"Accept": "application/json",
+				"Content-Type": "application/json", // to have JSON content in body
+				'Authorization': 'Bearer ' + myToken, // set JWT token
+			},
+			// body: JSON.stringify(myData) // set JSON data in request body
+		}
+
+		
+	)
+	return response.json()
+}
+
+
+
+
 export { getArtistsData }
 export { getApiTrackMacklemore }
+export { getTopTrack }
+export { getAlbums }
 
 

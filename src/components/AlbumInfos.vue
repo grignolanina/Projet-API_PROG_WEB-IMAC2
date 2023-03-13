@@ -1,16 +1,28 @@
 <template>
-	<div class="album-card">
+	<!-- <div class="album-card">
 		<img class="album-picture" src="https://i.discogs.com/1mMlyP9I8Nt1ERi6fHL9Jr6gDVD_YSW6LwiDBQWQuEY/rs:fit/g:sm/q:90/h:600/w:589/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk4OTY2/NjctMTQ4ODEzMjU4/OS02MjQxLmpwZWc.jpeg" />
 		<div class="album-infos">
 			<h2 class="album-name">Nom de l'album</h2>
 			<p class="album-date">Date</p>
 		</div>
+	</div> -->
 
+	<div class="album-card">
+		<img class="album-picture" v-bind:src="pictureUrl" />
+		<div class="album-infos">
+			<h2 class="album-name">{{name}}</h2>
+			<p class="album-date">{{releaseDate}}</p>
+		</div>
 	</div>
 </template>
 <script>
 export default{
-	name: "AlbumInfos"
+	name: "AlbumInfos",
+	props:{
+		pictureUrl:String,
+		name:String,
+		releaseDate:String
+	}
 }
 </script>
 
@@ -22,13 +34,13 @@ export default{
 	flex: auto;
 	/* width: 15vw; */
 	background-color: rgb(203, 203, 203);
-	margin: 0 1%;
+	margin: 1%;
 }
 
 .album-picture{
 	object-fit: cover;
 	border-radius: 20px;
-	height: 170px;
+	height: 250px;
 	/* flex:auto; */
 }
 
