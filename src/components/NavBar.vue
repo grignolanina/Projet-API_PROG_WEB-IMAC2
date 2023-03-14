@@ -2,6 +2,7 @@
 	<nav class="nav-background">
     <ul class="nav-list">
       <h1>MENU</h1>
+      <li><a href="#">Home</a></li>
       <li><a href="#">Explore</a></li>
       <li><a href="#">Artist</a></li>
     </ul>
@@ -31,5 +32,9 @@ export default {
   align-items: center;
   flex-direction: column;
   /* position: fixed; */
+}
+
+.nav-list a:hover{
+  color:#6F4BF2;
 }
 </style>

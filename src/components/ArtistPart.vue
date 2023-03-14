@@ -2,56 +2,28 @@
 	<main>
 		<header>
 			<ArtistBan 
-			:imageUrl="artistData['images'][0]?.url"
-			:name="artistData['name']" 
-			:audit="artistData['followers']?.total"
+			:imageUrl="artistImageUrl"
+			:name="artistName" 
+			:audit="artistFollowers"
 			/>
+			
+			<!-- debug -->
+			<!-- <p>{{ artistImageUrl }}</p>
+			<p>{{ artistName }}</p>
+			<p>{{ artistFollowers }}</p> -->
+
+			
 		</header>
 		<section>
 			<h1>Populaires</h1>
-			<MusicInfos 
-			:musicClassement="1"
-			:pictureUrl="trackData[0]['album']['images'][0]?.url"
-			:title="trackData[0]?.name"
-			:releasedDate="trackData[0]['album']?.release_date"
-			:time="trackData[0]?.duration_ms"
-			/>
-
-			<MusicInfos 
-			:musicClassement="2"
-			:pictureUrl="trackData[1]['album']['images'][0]?.url"
-			:title="trackData[1]?.name"
-			:releasedDate="trackData[1]['album']?.release_date"
-			:time="trackData[1]?.duration_ms"
-			/>
-
-			<MusicInfos 
-			:musicClassement="3"
-			:pictureUrl="trackData[2]['album']['images'][0]?.url"
-			:title="trackData[2]?.name"
-			:releasedDate="trackData[2]['album']?.release_date"
-			:time="trackData[2]?.duration_ms"
-			/>
-
-			<MusicInfos 
-			:musicClassement="4"
-			:pictureUrl="trackData[3]['album']['images'][0]?.url"
-			:title="trackData[3]?.name"
-			:releasedDate="trackData[3]['album']?.release_date"
-			:time="trackData[3]?.duration_ms"
-			/>
-
-			<MusicInfos 
-			:musicClassement="5"
-			:pictureUrl="trackData[4]['album']['images'][0]?.url"
-			:title="trackData[4]?.name"
-			:releasedDate="trackData[4]['album']?.release_date"
-			:time="trackData[4]?.duration_ms"
-			/>
-
-	
-
-
+			<MusicInfos
+				v-for="music in trackData"
+				:key="music.id"
+				:pictureUrl="music.album.images[0].url"
+				:title="music.name"
+				:releasedDate="music.album.release_date"
+				:time="music.duration_ms"
+				/>
 		</section>
 		<section>
 			<h1>Albums</h1>
@@ -64,7 +36,7 @@
 import AlbumGallery from './AlbumGallery.vue';
 import ArtistBan from "./ArtistBanniere.vue";
 import MusicInfos from './MusicInfos.vue';
-import { getApiTrackMacklemore } from '@/assets/services/api/artistAPI';
+import { getArtistInfo } from '@/assets/services/api/artistAPI';
 import { getTopTrack } from '@/assets/services/api/artistAPI';
 
 
@@ -79,8 +51,18 @@ export default {
 
 	data(){
 		return {
+			//elem for ban
 			artistData:[],
+			artistImageUrl:"",
+			artistName:"",
+			artistFollowers:"",
+
+			//elem for top music
 			trackData:[],
+		
+
+			
+			
 		}
 	},
 	created() {
@@ -90,13 +72,21 @@ export default {
 
 	methods:{
 		async artistInfo() {
-			this.artistData = await getApiTrackMacklemore()
+			this.artistData = await getArtistInfo()
+			this.artistImageUrl = this.artistData.images[0].url
+			this.artistName = this.artistData.name
+			this.artistFollowers = this.artistData.followers.total
+
 		},
 
 		async topTrack(){
 			this.trackData = await getTopTrack()
 			this.trackData = this.trackData['tracks']
 		}
+
+		
+
+
 	}
 
 	

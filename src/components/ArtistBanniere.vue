@@ -6,8 +6,10 @@
 
 	<div class="ban">
 		<img class="artist-ban" v-bind:src="imageUrl"/>
-		<h1 class="artist-name">{{name}}</h1>
-		<p class="artist-auditor">{{audit}}</p>
+		<div class="artist-infos">
+			<h1 class="artist-name">{{name}}</h1>
+			<p class="artist-auditor">{{audit}} auditeurs</p>
+		</div>
 	</div>
 	
 </template>
@@ -17,23 +19,20 @@ export default {
 	name: "ArtistBan",	
 	props : {
 		name:String,
-		audit: String,
-		imageUrl:String
+		audit: Number,
+		imageUrl: {type: String, default: "https://assets-global.website-files.com/60a0ade9a9e15bdd6b98f68b/60d5dc467b950c5ccc8ced95_spotify-for-artists.jpg"}
 	}
 }
 </script>
   
-<style>
+<style scoped>
 .ban{
-	/* background: grey; */
-	/* background-image:  linear-gradient(to bottom, rgba(134, 134, 134, 0), rgba(7, 7, 7, 0.73)), url("https://img.nrj.fr/jNkVifTv5om1ukOWoB1XEN1eU5A=/medias/2019/09/christophe-mae-presente-le-clip-de-les-gens_5d8a3e7b6c690.jpg"); */
-	/* background-size: cover;
-	background-repeat: no-repeat; */
 	height: 40vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
-	padding: 2% 5%;
+	/* padding: 2% 5%; */
+	margin: 0;
 }
 
 .artist-ban{
@@ -42,13 +41,19 @@ export default {
 	width: 100%;
 }
 
+.artist-infos{
+	position: absolute;
+	margin: 2%;
+}
 .artist-name{
 	color:white;
 	padding: 1% 0;
+	margin: 2%;
 }
 
 .artist-auditor{
 	color:white;
+	margin: 2% 2%;
 }
 
 </style>

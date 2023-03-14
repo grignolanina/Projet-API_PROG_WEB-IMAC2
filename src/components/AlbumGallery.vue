@@ -1,44 +1,13 @@
 <template>
 	<div class="album-gallery">
+		
 		<AlbumInfos
-		:pictureUrl="albumData[1]['images'][1]?.url"
-		:name="albumData[1]?.name"
-		:releaseDate="albumData[1]?.release_date"
+		v-for="album in albumData"
+		:key="album.id"
+		:imageUrl="album.images[1].url"
+		:name="album.name"
+		:releaseDate="album.release_date"
 		/>
-
-	
-
-		<AlbumInfos
-		:pictureUrl="albumData[2]['images'][1]?.url"
-		:name="albumData[2]?.name"
-		:releaseDate="albumData[2]?.release_date"
-		/>
-
-	
-
-		<AlbumInfos
-		:pictureUrl="albumData[4]['images'][1]?.url"
-		:name="albumData[4]?.name"
-		:releaseDate="albumData[4]?.release_date"
-		/>
-
-		<AlbumInfos
-		:pictureUrl="albumData[6]['images'][1]?.url"
-		:name="albumData[6]?.name"
-		:releaseDate="albumData[6]?.release_date"
-		/>
-
-		<AlbumInfos
-		:pictureUrl="albumData[8]['images'][1]?.url"
-		:name="albumData[8]?.name"
-		:releaseDate="albumData[8]?.release_date"
-		/> 
-
-		<AlbumInfos
-		:pictureUrl="albumData[10]['images'][1]?.url"
-		:name="albumData[10]?.name"
-		:releaseDate="albumData[10]?.release_date"
-		/> 
 	</div>
 	
 
@@ -58,6 +27,7 @@ export default{
 	data(){
 		return {
 			albumData:[]
+
 		}
 	},
 	created() {

@@ -8,7 +8,7 @@
 	</div> -->
 
 	<div class="album-card">
-		<img class="album-picture" v-bind:src="pictureUrl" />
+		<img class="album-picture" :src="imageUrl" />
 		<div class="album-infos">
 			<h2 class="album-name">{{name}}</h2>
 			<p class="album-date">{{releaseDate}}</p>
@@ -19,7 +19,7 @@
 export default{
 	name: "AlbumInfos",
 	props:{
-		pictureUrl:String,
+		imageUrl:String,
 		name:String,
 		releaseDate:String
 	}

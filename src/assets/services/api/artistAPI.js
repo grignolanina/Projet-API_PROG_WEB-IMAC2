@@ -6,19 +6,9 @@ function getArtistsData() {
 	]
 }
 
+let myToken="BQB5Vtx01O0F5FSxpVfZ65dt7pLedtuWmHEML8FnCDtRDjpW7ogZd-VIUTYONwsZQncn2onRiFv3eVVJkjx9UsnRYmC8KazfbFNzuWnh73tvmuJ4KRaD"
 
-
-//api disney ok
-// async function getApiDisney(){
-// 	let response = await fetch('https://api.disneyapi.dev/characters')
-// 	// console.log(response)
-// 	return response.json()
-// }
-
-let myToken="BQARMk9tNE12Sf2dD7YlQaY8A-LNSNFVGTReQDBl96T3jhg5ztkyWzkEqdqpvdBqIKPvDbO0oLOKUsgMSgb4CkWCJLxGOoUL42FaCodwdK0oe6kjjEv1"
-
-
-async function getApiTrackMacklemore() {
+async function getArtistInfo() {
 
 	let response = await fetch(
 		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY",
@@ -29,10 +19,7 @@ async function getApiTrackMacklemore() {
 				"Content-Type": "application/json", // to have JSON content in body
 				'Authorization': 'Bearer ' + myToken, // set JWT token
 			},
-			// body: JSON.stringify(myData) // set JSON data in request body
-		}
-
-		
+		}		
 	)
 	return response.json()
 }
@@ -43,16 +30,13 @@ async function getTopTrack() {
 	let response = await fetch(
 		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY/top-tracks?market=fr",
 		{
-			method: "GET", // or GET, PUT, DELETE, etc.
+			method: "GET",
 			headers: {
 				"Accept": "application/json",
-				"Content-Type": "application/json", // to have JSON content in body
-				'Authorization': 'Bearer ' + myToken, // set JWT token
+				"Content-Type": "application/json",
+				'Authorization': 'Bearer ' + myToken, 
 			},
-			// body: JSON.stringify(myData) // set JSON data in request body
 		}
-
-		
 	)
 	return response.json()
 }
@@ -60,28 +44,40 @@ async function getTopTrack() {
 async function getAlbums() {
 
 	let response = await fetch(
-		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY/albums?market=FR&limit=12",
+		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY/albums?market=FR&limit=3",
 		{
-			method: "GET", // or GET, PUT, DELETE, etc.
+			method: "GET", 
 			headers: {
 				"Accept": "application/json",
-				"Content-Type": "application/json", // to have JSON content in body
-				'Authorization': 'Bearer ' + myToken, // set JWT token
+				"Content-Type": "application/json", 
+				'Authorization': 'Bearer ' + myToken, 
 			},
-			// body: JSON.stringify(myData) // set JSON data in request body
 		}
+	)
+	return response.json()
+}
 
-		
+async function getNewRelease() {
+
+	let response = await fetch(
+		"https://api.spotify.com/v1/browse/new-releases?country=FR&limit=6",
+		{
+			method: "GET", 
+			headers: {
+				"Accept": "application/json",
+				"Content-Type": "application/json", 
+				'Authorization': 'Bearer ' + myToken, 
+			},
+		}
 	)
 	return response.json()
 }
 
 
 
-
 export { getArtistsData }
-export { getApiTrackMacklemore }
+export { getArtistInfo }
 export { getTopTrack }
 export { getAlbums }
-
+export { getNewRelease }
 

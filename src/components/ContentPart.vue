@@ -1,17 +1,19 @@
 <template>
 	<main>
-		<header>
-			<SearchBar/>
-		</header>
+		<HeaderPart/>
+		<!-- <header>
+			<h1>FYTISPO</h1>
+		</header> -->
 		<section>
-			<h1>Recherche récentes</h1>
-			<ArtistGallery/>
+			<h1>New Release</h1>
+			<NewReleasedGallery/>
+			
 		</section>
 		<section>
-			<h1>Tendances</h1>
+			<h1>Autres groupes</h1>
+			<!-- <ArtistGallery/>
 			<ArtistGallery/>
-			<ArtistGallery/>
-			<ArtistGallery/>
+			<ArtistGallery/> -->
 
 			
 		</section>
@@ -19,13 +21,13 @@
 </template>
   
 <script>
-import ArtistGallery from './ArtistGallery.vue';
-import SearchBar from './SearchBar.vue';
+import NewReleasedGallery from './NewReleasedGallery.vue';
+import HeaderPart from './HeaderPart.vue';
 export default {
 	name: "ContentPart",
 	components: {
-		ArtistGallery,
-		SearchBar
+		NewReleasedGallery,
+		HeaderPart
 	}
 }
 </script>

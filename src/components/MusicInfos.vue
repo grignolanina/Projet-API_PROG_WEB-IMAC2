@@ -32,11 +32,11 @@
 export default{
 	name: "MusicInfos",
 	props : {
-		musicClassement: String,
+		musicClassement: Number,
 		pictureUrl: String,
 		title:String,
 		releasedDate:String,
-		time:String
+		time:Number
 	}
 }
 
