@@ -17,8 +17,9 @@
 		<section>
 			<h1>Populaires</h1>
 			<MusicInfos
-				v-for="music in trackData"
+				v-for="(music, index) in trackData"
 				:key="music.id"
+				:musicClassement="index+1"
 				:pictureUrl="music.album.images[0].url"
 				:title="music.name"
 				:releasedDate="music.album.release_date"
@@ -56,6 +57,8 @@ export default {
 			artistImageUrl:"",
 			artistName:"",
 			artistFollowers:"",
+
+			//elem num
 
 			//elem for top music
 			trackData:[],

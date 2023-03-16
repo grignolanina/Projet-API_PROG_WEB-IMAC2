@@ -1,20 +1,9 @@
 <template>
 	<main>
 		<HeaderPart/>
-		<!-- <header>
-			<h1>FYTISPO</h1>
-		</header> -->
 		<section>
 			<h1>New Release</h1>
 			<NewReleasedGallery/>
-			
-		</section>
-		<section>
-			<h1>Autres groupes</h1>
-			<!-- <ArtistGallery/>
-			<ArtistGallery/>
-			<ArtistGallery/> -->
-
 			
 		</section>
 	</main>

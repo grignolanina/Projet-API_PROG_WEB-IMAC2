@@ -6,12 +6,15 @@ function getArtistsData() {
 	]
 }
 
-let myToken="BQB5Vtx01O0F5FSxpVfZ65dt7pLedtuWmHEML8FnCDtRDjpW7ogZd-VIUTYONwsZQncn2onRiFv3eVVJkjx9UsnRYmC8KazfbFNzuWnh73tvmuJ4KRaD"
+let myToken="BQAndBA4o-osXU5RzFs-lfEfQbTPQWt8LzoKcwaG1fSGPAirpH3V8XScUX3c3UY5-RQt0Rw0nax4U1nF-xj8fdgNfMgss7fePGVqEuBzSq2LbW41dt3_"
+
+// let id = "3JhNCzhSMTxs9WLGJJxWOY"
+let id ="4FpJcNgOvIpSBeJgRg3OfN"
 
 async function getArtistInfo() {
 
 	let response = await fetch(
-		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY",
+		"https://api.spotify.com/v1/artists/"+id,
 		{
 			method: "GET", // or GET, PUT, DELETE, etc.
 			headers: {
@@ -28,7 +31,7 @@ async function getArtistInfo() {
 async function getTopTrack() {
 
 	let response = await fetch(
-		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY/top-tracks?market=fr",
+		"https://api.spotify.com/v1/artists/"+id+"/top-tracks?market=fr",
 		{
 			method: "GET",
 			headers: {
@@ -44,7 +47,7 @@ async function getTopTrack() {
 async function getAlbums() {
 
 	let response = await fetch(
-		"https://api.spotify.com/v1/artists/3JhNCzhSMTxs9WLGJJxWOY/albums?market=FR&limit=3",
+		"https://api.spotify.com/v1/artists/"+id+"/albums?market=FR&limit=3",
 		{
 			method: "GET", 
 			headers: {
@@ -60,7 +63,7 @@ async function getAlbums() {
 async function getNewRelease() {
 
 	let response = await fetch(
-		"https://api.spotify.com/v1/browse/new-releases?country=FR&limit=6",
+		"https://api.spotify.com/v1/browse/new-releases?country=FR&limit=12",
 		{
 			method: "GET", 
 			headers: {
@@ -73,6 +76,27 @@ async function getNewRelease() {
 	return response.json()
 }
 
+// let research = "christophe"
+
+async function searchArtist(research){
+	let response = await fetch(
+	"https://api.spotify.com/v1/search?query="+research+"&type=artist&market=FR&offset=0&limit=10",
+	{
+		method: "GET", 
+		headers: {
+			"Accept": "application/json",
+			"Content-Type": "application/json", 
+			'Authorization': 'Bearer ' + myToken, 
+		},
+	}
+)
+
+	return response.json()
+}
+
+
+
+
 
 
 export { getArtistsData }
@@ -80,4 +104,5 @@ export { getArtistInfo }
 export { getTopTrack }
 export { getAlbums }
 export { getNewRelease }
+export {searchArtist}
 

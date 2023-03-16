@@ -61,6 +61,9 @@ export default{
 	align-items: end;
 	flex:2;
 }
+.music-classement{
+	color:#6F4BF2;
+}
 .music-cover{
 	object-fit: cover;
 	border-radius: 100px;
