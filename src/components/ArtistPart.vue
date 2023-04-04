@@ -1,19 +1,5 @@
 <template>
 	<main>
-		<header>
-			<ArtistBan 
-			:imageUrl="artistImageUrl"
-			:name="artistName" 
-			:audit="artistFollowers"
-			/>
-			
-			<!-- debug -->
-			<!-- <p>{{ artistImageUrl }}</p>
-			<p>{{ artistName }}</p>
-			<p>{{ artistFollowers }}</p> -->
-
-			
-		</header>
 		<section>
 			<h1>Populaires</h1>
 			<MusicInfos
@@ -35,7 +21,7 @@
   
 <script>
 import AlbumGallery from './AlbumGallery.vue';
-import ArtistBan from "./ArtistBanniere.vue";
+// import ArtistBan from "./ArtistBanniere.vue";
 import MusicInfos from './MusicInfos.vue';
 import { getArtistInfo } from '@/assets/services/api/artistAPI';
 import { getTopTrack } from '@/assets/services/api/artistAPI';
@@ -45,7 +31,7 @@ import { getTopTrack } from '@/assets/services/api/artistAPI';
 export default {
 	name: "ArtistPart",
 	components: {
-		ArtistBan,
+		// ArtistBan,
 		MusicInfos,
 		AlbumGallery
 	},
@@ -96,11 +82,9 @@ export default {
 }
 </script>
   
-<style>
+<style scoped>
 main{
-	right:0;
-	width: 75%;
-	position: absolute;
+	width: 100%;
 }
 
 section{

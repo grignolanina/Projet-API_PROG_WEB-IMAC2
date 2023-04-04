@@ -1,22 +1,29 @@
 <template>
-    <NavBar/>
+    <HeaderPart/>
+    <NavBarLine/>
     <ContentPart/>
+    <FooterPart/>
 
 </template>
 
 <script>
 import ContentPart from './components/ContentPart.vue';
-import NavBar from './components/NavBar.vue';
+import NavBarLine from './components/NavBarLine.vue';
+import HeaderPart from './components/HeaderPart.vue';
+import FooterPart from './components/FooterPart.vue';
 
 export default {
   name: "App",
   components: { 
     ContentPart,
-    NavBar 
+    NavBarLine,
+    HeaderPart,
+    FooterPart
   }
 }
 </script>
 
-<style>
 
+
+<style>
 </style>

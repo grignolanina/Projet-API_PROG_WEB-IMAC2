@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .artist_gallery {
 	display: flex;
 	flex-wrap: wrap;

@@ -1,35 +1,71 @@
-<template>
+<template >
 	<main>
-		<HeaderPart/>
+		<!-- <HeaderPart
+		:id="artistId"
+		:name="artistName"
+		:imageUrl="artistImageUrl"
+		:title="titleName"
+		:releasedDate="releasedDate"
+		/> -->
 		<section>
-			<h1>New Release</h1>
+			<h2>Welcome</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab autem a facere facilis perferendis, sequi commodi dolor vel porro enim fugit vitae, exercitationem velit voluptates. Ipsum deleniti nisi velit!</p>
+		</section>
+		
+		<section>
+			<h2>New Release</h2>
 			<NewReleasedGallery/>
-			
 		</section>
 	</main>
 </template>
   
 <script>
 import NewReleasedGallery from './NewReleasedGallery.vue';
-import HeaderPart from './HeaderPart.vue';
+import { getNewRelease } from '@/assets/services/api/artistAPI';
+
 export default {
 	name: "ContentPart",
 	components: {
 		NewReleasedGallery,
-		HeaderPart
+	},
+	data(){
+		return{
+			newReleaseData:[],
+			artistId:"",
+			artistImageUrl:"",
+			artistName:"",
+			titleName:"",
+			releasedDate:"",
+		}
+	},
+	created(){
+		this.newReleaseInfo()
+
+	},
+
+	methods:{
+		async newReleaseInfo(){
+			this.newReleaseData = await getNewRelease()
+			this.newReleaseData = this.newReleaseData.albums.items
+			this.artistId = this.newReleaseData[0].artists.id
+			this.artistImageUrl = this.newReleaseData[0].images[0].url
+			this.artistName = this.newReleaseData[0].artists[0].name
+			this.titleName = this.newReleaseData[0].name
+			this.releasedDate = this.newReleaseData[0].release_date
+
+		}
+
 	}
 }
 </script>
   
-<style>
-main{
-	right:0;
-	width: 75%;
-	position: absolute;
-}
-
+<style scoped>
 section{
 	margin: 2% 5%;
+}
+
+h2{
+	padding: 1% 0;
 }
 </style>
   

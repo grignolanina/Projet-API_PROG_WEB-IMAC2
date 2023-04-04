@@ -10,12 +10,11 @@
 
 <script>
 export default {
-	name: "NewReleasedCard",
+	name: "ResearchCard",
 	props : {
 		name: String,
 		title: String,
 		pictureUrl: String 
-		//gerer le href
 	}
 }
 </script>
@@ -32,7 +31,7 @@ export default {
 	margin: 1%;
 	/* width: 20vw;
 	height: 20vh; */
-	background-color:  #F5F1F8;
+	background-color: #F5F1F8;
 }
 
 .infos{

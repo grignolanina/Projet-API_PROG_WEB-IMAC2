@@ -6,7 +6,7 @@ function getArtistsData() {
 	]
 }
 
-let myToken="BQAndBA4o-osXU5RzFs-lfEfQbTPQWt8LzoKcwaG1fSGPAirpH3V8XScUX3c3UY5-RQt0Rw0nax4U1nF-xj8fdgNfMgss7fePGVqEuBzSq2LbW41dt3_"
+let myToken="BQAm9Ne7z1AI_Cbn8P19PQbcR22Rli8V9dLFiv5TMDjPBPlDDEKVbIy-eKBQRn1F-m31Bemyr0bdRjxZN_jSmV4xQzYtOyl82vif_ynFedvITFO8Ppqd"
 
 // let id = "3JhNCzhSMTxs9WLGJJxWOY"
 let id ="4FpJcNgOvIpSBeJgRg3OfN"
@@ -80,7 +80,7 @@ async function getNewRelease() {
 
 async function searchArtist(research){
 	let response = await fetch(
-	"https://api.spotify.com/v1/search?query="+research+"&type=artist&market=FR&offset=0&limit=10",
+	"https://api.spotify.com/v1/search?query="+research+"&type=artist&market=FR&offset=0&limit=9",
 	{
 		method: "GET", 
 		headers: {

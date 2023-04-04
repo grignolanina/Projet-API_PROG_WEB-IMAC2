@@ -2,8 +2,8 @@
 	<a href="#" class="artist-card">
 		<img class="artist-picture" :src="pictureUrl" />
 		<div class="infos">
-			<h2 class="name">{{name}}</h2>
-			<p class="style">{{title}}</p>
+			<h2 class="artist-name">{{name}}</h2>
+			<p class="music-title">{{title}}</p>
 		</div>
 	</a>
 </template>
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .artist-card {
 	
 	border-radius: 20px;
@@ -32,7 +32,7 @@ export default {
 	margin: 1%;
 	/* width: 20vw;
 	height: 20vh; */
-	background-color: rgb(203, 203, 203);
+	background-color: #F5F1F8;
 }
 
 .infos{
@@ -51,9 +51,14 @@ export default {
 	height: auto;
 }
 
-.style{
+.artist-name{
+
+}
+
+.music-title{
 	/* font-size: 0.2em; */
 	color:#6F4BF2;
+	/* visibility: collapse; */
 }
 
 h2 {

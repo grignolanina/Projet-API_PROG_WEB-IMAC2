@@ -48,7 +48,7 @@ export default{
 //get album of one artist
 </script>
 
-<style>
+<style scoped>
 .album-gallery{
 	display: flex;
 	justify-content: space-between;

@@ -4,13 +4,14 @@
 		<p class="artist-auditor">123 065 auditeurs</p>
 	</div> -->
 
-	<div class="ban">
+	<header class="ban">
 		<img class="artist-ban" v-bind:src="imageUrl"/>
+		<a class="back" href=""> &lt; back previous page</a>
 		<div class="artist-infos">
 			<h1 class="artist-name">{{name}}</h1>
 			<p class="artist-auditor">{{audit}} auditeurs</p>
 		</div>
-	</div>
+	</header>
 	
 </template>
   
@@ -26,7 +27,7 @@ export default {
 </script>
   
 <style scoped>
-.ban{
+header{
 	height: 40vh;
 	display: flex;
 	flex-direction: column;
@@ -44,6 +45,17 @@ export default {
 .artist-infos{
 	position: absolute;
 	margin: 2%;
+}
+
+.back{
+	position: absolute;
+	top: 0;
+	padding: 1% 0;
+	margin: 2%;
+	color: white;
+}
+.back:hover{
+	color: #6F4BF2;
 }
 .artist-name{
 	color:white;

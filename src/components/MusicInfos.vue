@@ -42,7 +42,7 @@ export default{
 
 
 </script>
-<style>
+<style scoped>
 .music-line{
 	display: flex;
 	flex-direction: row;

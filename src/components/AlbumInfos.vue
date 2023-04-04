@@ -26,7 +26,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 .album-card{
 	border-radius: 20px;
 	display: flex;

@@ -1,11 +1,12 @@
 <template>
 	<nav class="nav-background">
     <ul class="nav-list">
-      <h1>MENU</h1>
+      <h2>MENU</h2>
       <li><a href="#">Home</a></li>
       <li><a href="#">Explore</a></li>
       <li><a href="#">Artist</a></li>
     </ul>
+    
 	</nav>
 	
 </template>
@@ -14,16 +15,18 @@ export default {
 	name: "NavBar"
 }
 </script>
-<style>
+<style scoped>
 .nav-background{
   display: flex;
-  background: rgb(203, 203, 203);
+  background: #F5F1F8;
   width: 25%;
   justify-content: center;
+  align-items: stretch;
   position: fixed;
   height: 100%;
 
 }
+
 .nav-list{
   display: flex;
   list-style-type: none;

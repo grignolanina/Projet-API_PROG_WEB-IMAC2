@@ -9,7 +9,7 @@ export default {
 	name: "SearchBar"
 }
 </script>
-<style>
+<style scoped>
 #searchbox {
 	/* margin: 2% 5%; */
     width: 100%;
@@ -33,7 +33,7 @@ input:focus:-moz-placeholder {
 #searchbox input[type="text"] {
     background: transparent;
 	border: 0px;
-	color: white;
+	color: #F5F1F8;
     font-size: 12px;
     width: 81%;
 }
