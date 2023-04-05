@@ -31,20 +31,27 @@ export default {
 		NewReleasedCard
 	},
 	computed: {
-		newReleaseOrganizeData: function(){
-			const reversed = ["ZAName", "AZName"].includes(this.artistSortType)
-			let data = this.newReleaseData
-			if (reversed) data = data.reverse()
-			return data
-		}
 		// newReleaseOrganizeData: function(){
-		// 	const field = ["AZName", "ZAName"].includes(this.artistSortType) ? "name" : "title"
-		// 	const reversed = ["ZAName", "ZATitle"].includes(this.artistSortType)
-		// 	const comparator = (a, b) => a[field].localeCompare(b[field]) 
-		// 	let data = this.newReleaseData.sort(comparator)
+		// 	const reversed = ["ZAName", "AZName"].includes(this.artistSortType)
+		// 	let data = this.newReleaseData
 		// 	if (reversed) data = data.reverse()
 		// 	return data
 		// }
+		newReleaseOrganizeData: function(){
+			const field = ["AZName", "ZAName"].includes(this.artistSortType) ? "name" : "title"
+			const reversed = ["ZAName", "ZATitle"].includes(this.artistSortType)
+			const comparator = (a, b) => a[field].localeCompare(b[field]) 
+			let data = this.newReleaseData
+			data.sort(comparator)
+			if (reversed) data = data.reverse()
+			return data
+		}
+
+		// newReleaseOrganizeData: function() {
+		// const field = ["AZName", "ZAName"].includes(this.artistSortType) ? "name" : "title"
+		// const reversed = ["ZAName", "ZATitle"].includes(this.artistSortType) ? -1 : 1
+		// return this.newReleaseData.sort((a, b) => a[field].localeCompare(b[field]) * reversed)
+		//}
 
 		
 	},
@@ -57,20 +64,12 @@ export default {
 	},
 	created(){
 		this.newReleaseInfo()
-		// this.artistSortType 
-
-
 	},
 
 	methods:{
 		async newReleaseInfo(){
 			this.newReleaseData = await getNewRelease()
 			this.newReleaseData = this.newReleaseData.albums.items
-			// if(this.artistSortType=="AZName"){
-			// 	this.newReleaseData.sort();
-			// }else if(this.artistSortType=="ZAName"){
-			// 	this.newReleaseData.reverse()
-			// }
 		}
 
 	}

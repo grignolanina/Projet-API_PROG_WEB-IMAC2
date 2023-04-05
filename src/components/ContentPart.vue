@@ -1,12 +1,5 @@
 <template >
 	<main>
-		<!-- <HeaderPart
-		:id="artistId"
-		:name="artistName"
-		:imageUrl="artistImageUrl"
-		:title="titleName"
-		:releasedDate="releasedDate"
-		/> -->
 		<section>
 			<h2>Welcome</h2>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab autem a facere facilis perferendis, sequi commodi dolor vel porro enim fugit vitae, exercitationem velit voluptates. Ipsum deleniti nisi velit!</p>
