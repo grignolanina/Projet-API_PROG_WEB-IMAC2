@@ -5,10 +5,16 @@
 				<option value="AZName">Name A to Z - Artists</option>
 				<option value="ZAName">Name Z to A - Artists</option>
 				<option value="AZTitle">Name A to Z - Titles</option>
-				<option value="ZATitle">Name Z to A - Title</option>
+				<option value="ZATitle">Name Z to A - Titles</option>
 			</select>
-
+			<!-- <select v-model="artistSortType">
+				<option value="AZName">Name A to Z - Artists</option>
+				<option value="ZAName">Name Z to A - Artists</option>
+				<option value="AZTitle">Name A to Z - Titles</option>
+				<option value="ZATitle">Name Z to A - Title</option>
+			</select> -->
 		</div>
+		
 		<div class="artist_gallery">
 			<NewReleasedCard
 			v-for="released in newReleaseOrganizeData"
@@ -31,28 +37,18 @@ export default {
 		NewReleasedCard
 	},
 	computed: {
-		// newReleaseOrganizeData: function(){
-		// 	const reversed = ["ZAName", "AZName"].includes(this.artistSortType)
-		// 	let data = this.newReleaseData
-		// 	if (reversed) data = data.reverse()
-		// 	return data
-		// }
 		newReleaseOrganizeData: function(){
-			const field = ["AZName", "ZAName"].includes(this.artistSortType) ? "name" : "title"
+			let data = [...this.newReleaseData]
 			const reversed = ["ZAName", "ZATitle"].includes(this.artistSortType)
-			const comparator = (a, b) => a[field].localeCompare(b[field]) 
-			let data = this.newReleaseData
-			data.sort(comparator)
-			if (reversed) data = data.reverse()
+
+			if(this.artistSortType =="AZName" || this.artistSortType == "ZAName"){
+				data.sort(function (a,b){ return a.artists[0]["name"].localeCompare(b.artists[0]["name"])})
+			} else{
+				data.sort(function (a,b){ return a["name"].localeCompare(b["name"])})	
+			}
+			if(reversed) data = data.reverse()
 			return data
 		}
-
-		// newReleaseOrganizeData: function() {
-		// const field = ["AZName", "ZAName"].includes(this.artistSortType) ? "name" : "title"
-		// const reversed = ["ZAName", "ZATitle"].includes(this.artistSortType) ? -1 : 1
-		// return this.newReleaseData.sort((a, b) => a[field].localeCompare(b[field]) * reversed)
-		//}
-
 		
 	},
 

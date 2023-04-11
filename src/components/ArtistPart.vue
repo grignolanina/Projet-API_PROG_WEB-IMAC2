@@ -3,7 +3,7 @@
 		<section>
 			<h1>Populaires</h1>
 			<MusicInfos
-				v-for="(music, index) in trackData"
+				v-for="(music, index) in newTrackData"
 				:key="music.id"
 				:musicClassement="index+1"
 				:pictureUrl="music.album.images[0].url"
@@ -35,6 +35,15 @@ export default {
 		MusicInfos,
 		AlbumGallery
 	},
+	computed:{
+		newTrackData : function(){
+			let data = [...this.trackData]
+			for(const music of data){
+				music.duration_ms = convertTime(music.duration_ms)
+			}
+			return data
+		}
+	},
 
 	data(){
 		return {
@@ -48,9 +57,6 @@ export default {
 
 			//elem for top music
 			trackData:[],
-		
-
-			
 			
 		}
 	},
@@ -77,8 +83,18 @@ export default {
 
 
 	}
-
 	
+}
+
+//a deplacer ?
+function convertTime(time){
+	var min = Math.floor((time/1000/60) << 0);
+	var sec = Math.floor((time/1000) % 60);
+
+	if(sec <10){
+		sec = "0"+sec
+	}
+	return min + ':' + sec;
 }
 </script>
   

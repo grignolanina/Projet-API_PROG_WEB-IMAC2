@@ -24,7 +24,7 @@
 
 		<p class="music-released">{{releasedDate}}</p>
 
-		<p class="music-time">{{time}} s</p>
+		<p class="music-time">{{time}}</p>
 	</div>
 	
 </template>
@@ -36,9 +36,30 @@ export default{
 		pictureUrl: String,
 		title:String,
 		releasedDate:String,
-		time:Number
-	}
+		time:String
+	},
+	// computed: {
+	// 	convertTime : function(){
+	// 		console.log(this.time)
+	// 		return convertTimeF(this.time)
+	// 	}
+	// },
+	// data(){
+	// 	return{
+	// 		newTime:"00:00"
+	// 	}
+	// }
 }
+
+// function convertTimeF(time){
+// 	if(time >=60){
+// 		var minutes = floor(time/60)
+// 		var secondes = reste%60
+// 		return minutes+ ":" +secondes
+// 	} else {
+// 		return "00:"+time
+// 	}
+// }
 
 
 </script>

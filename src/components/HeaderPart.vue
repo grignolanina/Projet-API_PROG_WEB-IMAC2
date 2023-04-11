@@ -41,7 +41,9 @@ header{
 
 h1{
 	color: white;
-	font-size: 11em;
+	/* font-size: 11em; */
+	font-size:15vw;
+
 	/* padding: 7% 1%; */
 
 	opacity: 0.33;

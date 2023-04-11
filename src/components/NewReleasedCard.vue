@@ -34,7 +34,6 @@ export default {
 	height: 20vh; */
 	background-color: #F5F1F8;
 }
-
 .infos{
 	display: flex;
 	flex:auto;
