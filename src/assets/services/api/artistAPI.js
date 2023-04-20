@@ -53,6 +53,7 @@ async function getTopTrack() {
 
 	let myToken = await getToken()
 
+	
 	let response = await fetch(
 		"https://api.spotify.com/v1/artists/"+id+"/top-tracks?market=fr",
 		{
@@ -62,10 +63,14 @@ async function getTopTrack() {
 				"Content-Type": "application/json",
 				'Authorization': 'Bearer ' + myToken.access_token, 
 			},
-		}
+		},
+
 	)
+	
 	return response.json()
 }
+
+
 
 async function getAlbums() {
 	let myToken = await getToken()

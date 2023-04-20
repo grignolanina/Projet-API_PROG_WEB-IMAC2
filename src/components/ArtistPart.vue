@@ -21,7 +21,6 @@
   
 <script>
 import AlbumGallery from './AlbumGallery.vue';
-// import ArtistBan from "./ArtistBanniere.vue";
 import MusicInfos from './MusicInfos.vue';
 import { getArtistInfo } from '@/assets/services/api/artistAPI';
 import { getTopTrack } from '@/assets/services/api/artistAPI';
@@ -52,8 +51,6 @@ export default {
 			artistImageUrl:"",
 			artistName:"",
 			artistFollowers:"",
-
-			//elem num
 
 			//elem for top music
 			trackData:[],

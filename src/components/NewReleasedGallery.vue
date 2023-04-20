@@ -1,20 +1,6 @@
 <template>
-		<div class="artist-gallery-option">
-			<label for="artist-sort">Sort by</label>
-			<select v-model="artistSortType">
-				<option value="AZName">Name A to Z - Artists</option>
-				<option value="ZAName">Name Z to A - Artists</option>
-				<option value="AZTitle">Name A to Z - Titles</option>
-				<option value="ZATitle">Name Z to A - Titles</option>
-			</select>
-			<!-- <select v-model="artistSortType">
-				<option value="AZName">Name A to Z - Artists</option>
-				<option value="ZAName">Name Z to A - Artists</option>
-				<option value="AZTitle">Name A to Z - Titles</option>
-				<option value="ZATitle">Name Z to A - Title</option>
-			</select> -->
-		</div>
-		
+		<NewReleasedGalleryOption v-model:artistSortType="artistSortType"/>
+
 		<div class="artist_gallery">
 			<NewReleasedCard
 			v-for="released in newReleaseOrganizeData"
@@ -24,17 +10,19 @@
 			:pictureUrl="released.images[0].url"
 			/>
 		</div>
-		
 </template>
 
 <script>
 import { getNewRelease } from '@/assets/services/api/artistAPI';
 import NewReleasedCard from './NewReleasedCard.vue';
+import NewReleasedGalleryOption from './NewReleasedGalleryOption.vue';
 
 export default {
 	name: "NewReleasedGallery",
 	components: { 
-		NewReleasedCard
+		NewReleasedCard,
+		NewReleasedGalleryOption
+
 	},
 	computed: {
 		newReleaseOrganizeData: function(){
@@ -55,7 +43,8 @@ export default {
 	data(){
 		return{
 			newReleaseData:[],
-			artistSortType:"AZName",
+			artistSortType: localStorage.getItem("artistSortType") || "AZName"
+
 		}
 	},
 	created(){

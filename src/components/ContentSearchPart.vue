@@ -2,10 +2,12 @@
 	<main>
 		<section>
 			<h1>Recherche d'artistes</h1>
-			<div class="artist_search">
+			<!-- <div class="artist_search">
 				<input class="search_bar" type="text" v-model="searchArtistKey" placeholder="Search artists">
 				<button class="search_button" v-on:click="search">Search</button>	
-			</div>	
+			</div>	 -->
+			<SearchOption  v-model:searchArtistKey="searchArtistKey" @search="searchText" />
+
 			
 			<div class="artist_research">
 				<ResearchCard
@@ -23,16 +25,47 @@
 <script>
 import { searchArtist } from '@/assets/services/api/artistAPI';
 import ResearchCard from './ResearchCard.vue';
+import SearchOption from './SearchOption.vue';
+
+// export default {
+// 	name: "ContentPart",
+// 	components:{
+// 		ResearchCard,
+// 		SearchOption
+// 	},
+// 	data(){
+// 		return {
+// 			searchArtistKey: "",
+// 			artistSearch:"",
+// 			artistSearchData:[]
+// 		};
+
+// 	},
+// 	created(){
+// 		this.searchText()
+// 	},
+// 	methods: {
+// 			search : function() {
+// 				this.searchText()
+// 			},
+// 			async searchText(){
+// 				this.artistSearchData = await searchArtist(this.searchArtistKey)
+// 				this.artistSearchData = this.artistSearchData['artists']['items']
+// 			}
+// 	},
+
+// }
 
 export default {
 	name: "ContentPart",
 	components:{
-		ResearchCard
+		ResearchCard,
+		SearchOption
 	},
 	data(){
 		return {
-			searchArtistKey: "",
-			artistSearch:"",
+			// searchArtistKey: "",
+			searchArtistKey: localStorage.getItem("searchArtistKey") || "",
 			artistSearchData:[]
 		};
 
@@ -55,7 +88,7 @@ export default {
   
 <style scoped>
 
-.artist_search {
+/* .artist_search {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -97,7 +130,7 @@ export default {
     height: 5vh;
 	font-size: 1.2em;
 
-}
+} */
 .artist_research{
 	display: flex;
 	flex-wrap:wrap;
