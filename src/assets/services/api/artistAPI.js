@@ -29,9 +29,8 @@ async function myFunctionToken(){
 
 
 // let id = "3JhNCzhSMTxs9WLGJJxWOY"
-let id ="4FpJcNgOvIpSBeJgRg3OfN"
 
-async function getArtistInfo() {
+async function getArtistInfo(id) {
 	let myToken = await getToken()
 
 	let response = await fetch(
@@ -49,7 +48,7 @@ async function getArtistInfo() {
 }
 
 //rajoute en param id
-async function getTopTrack() {
+async function getTopTrack(id) {
 
 	let myToken = await getToken()
 
@@ -72,7 +71,7 @@ async function getTopTrack() {
 
 
 
-async function getAlbums() {
+async function getAlbums(id) {
 	let myToken = await getToken()
 
 	let response = await fetch(

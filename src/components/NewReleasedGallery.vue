@@ -2,13 +2,15 @@
 		<NewReleasedGalleryOption v-model:artistSortType="artistSortType"/>
 
 		<div class="artist_gallery">
-			<NewReleasedCard
-			v-for="released in newReleaseOrganizeData"
-			:key="released.artists.id"
-			:name="released.artists[0].name"
-			:title="released.name"
-			:pictureUrl="released.images[0].url"
-			/>
+			<div v-for="released in newReleaseOrganizeData" :key="released.artists[0].id">
+				<router-link :to="'/'+released.artists[0].id">
+				<NewReleasedCard
+				:name="released.artists[0].name"
+				:title="released.name"
+				:pictureUrl="released.images[0].url"
+				/>
+				</router-link>
+			</div>
 		</div>
 </template>
 

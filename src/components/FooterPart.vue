@@ -1,8 +1,8 @@
 <template>
 	<footer>
 		<ul>
-			<li><a class="footer-elem" href="">contact@fytispo.com</a></li>
-			<li><a class="footer-elem" href="">+33 (0)1 65 74 32 43</a></li>
+			<li><a class="footer-elem link" href="mailto:contact@fytispo.com">contact@fytispo.com</a></li>
+			<li><a class="footer-elem link" href="tel:+33 (0)1 65 74 32 43">+33 (0)1 65 74 32 43</a></li>
 		</ul>
 		<p class="footer-elem">©grignolanina | 2023</p>
 	</footer>
@@ -30,6 +30,10 @@ ul{
 .footer-elem{
 	color: #F5F1F8;
 	opacity: 0.33;
+}
+.link:hover{
+	color: #F5F1F8;
+	opacity: 0.99	;
 }
 
 </style>

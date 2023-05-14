@@ -1,29 +1,15 @@
 <template>
-    <HeaderPart/>
-    <NavBarLine/>
-    <ContentPart/>
-    <FooterPart/>
-
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
-import ContentPart from './components/ContentPart.vue';
-import NavBarLine from './components/NavBarLine.vue';
-import HeaderPart from './components/HeaderPart.vue';
-import FooterPart from './components/FooterPart.vue';
-
-export default {
-  name: "App",
-  components: { 
-    ContentPart,
-    NavBarLine,
-    HeaderPart,
-    FooterPart
-  }
-}
-</script>
-
-
-
 <style>
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: black;
+	font-family: 'Inter', sans-serif;
+}
 </style>

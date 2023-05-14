@@ -14,8 +14,7 @@ export default {
 	props : {
 		name: String,
 		title: String,
-		pictureUrl: String 
-		//gerer le href
+		pictureUrl: String,
 	}
 }
 </script>

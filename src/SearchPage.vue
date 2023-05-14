@@ -1,14 +1,8 @@
 <template>
-  <!-- <div class="test1"> -->
-    <!-- <NavBar/> -->
-    <!-- <div class="test2"> -->
       <HeaderPart/>
       <NavBarLine/>
       <ContentSearchPart/>
       <FooterPart/>
-    <!-- </div> -->
-  <!-- </div> -->
-    
 </template>
 
 <script>
@@ -19,7 +13,7 @@ import HeaderPart from './components/HeaderPart.vue';
 import FooterPart from './components/FooterPart.vue';
 
 export default {
-  name: "App",
+  name: "SearchPage",
   components: { 
     ContentSearchPart,
     NavBarLine,

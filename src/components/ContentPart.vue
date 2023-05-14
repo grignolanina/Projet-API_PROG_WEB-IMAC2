@@ -2,7 +2,7 @@
 	<main>
 		<section>
 			<h2>Welcome</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab autem a facere facilis perferendis, sequi commodi dolor vel porro enim fugit vitae, exercitationem velit voluptates. Ipsum deleniti nisi velit!</p>
+			<p>Découvrez une expérience unique grâce à notre site web FYTISPO qui utilise l'API Spotify pour vous offrir un accès facile aux artistes, albums et chansons de la plateforme. Recherchez, explorez et découvrez de la musique sans quitter notre plateforme conviviale et intuitive. Restez à jour avec les dernières nouveautés. Explorez notre bibliothèque musicale dès maintenant.</p>
 		</section>
 		
 		<section>
