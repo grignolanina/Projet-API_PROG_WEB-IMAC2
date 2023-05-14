@@ -11,32 +11,30 @@ const routes = [
 	{
 		path: '/',
 		component: HomePage,
-		name:"HomePage"
+		name: "HomePage"
 	},
 	{
 		path: '/SearchPage',
 		component: SearchPage,
-		name:"SearchPage"
+		name: "SearchPage"
 	},
 	{
 		path: '/:id',
 		component: ProfilePage,
 		name: 'ProfilePage',
 
-		// props:true
+		// props: true
 	},
-	// {
-	// 	path: '*', redirect:'/',
-	// }
+
 ]
 
 
 const router = createRouter({
-    history:createWebHistory(),
-    routes
+	history: createWebHistory(),
+	routes
 })
 
-const app = createApp(App) 
+const app = createApp(App)
 app.use(router)
 app.mount('#app')
 

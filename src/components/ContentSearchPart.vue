@@ -1,23 +1,68 @@
+<!-- <template>
+	<main>
+		<section>
+			<h1>Recherche d'artistes</h1>
+			<SearchOption v-model:searchArtistKey.sync="searchArtistKey" @update:searchArtistKey="searchArtistKey = $event"
+				@search="searchText" />
+			<div class="artist_research">
+				<div v-for="artist in artistSearchData" :key="artist.id">
+					<router-link :to="'/' + artist.id">
+						<ResearchCard :name="artist.name" :title="artist.genres[0]" :pictureUrl="artist.images[0].url" />
+					</router-link>
+				</div>
+			</div>
+		</section>
+	</main>
+</template>
+
+<script>
+import { searchArtist } from '@/assets/services/api/artistAPI';
+import ResearchCard from './ResearchCard.vue';
+import SearchOption from './SearchOption.vue';
+
+export default {
+	name: "ContentPart",
+	components: {
+		ResearchCard,
+		SearchOption
+	},
+	data() {
+		return {
+			searchArtistKey: localStorage.getItem("searchArtistKey") || "",
+			artistSearchData: []
+		};
+
+	},
+	created() {
+		this.searchText()
+	},
+	methods: {
+		search: function () {
+			this.searchText()
+		},
+		async searchText() {
+			if (this.searchArtistKey) {
+				this.artistSearchData = await searchArtist(this.searchArtistKey)
+				this.artistSearchData = this.artistSearchData['artists']['items']
+			}
+		}
+	}
+}
+</script> -->
+
 <template>
 	<main>
 		<section>
 			<h1>Recherche d'artistes</h1>
-			<!-- <div class="artist_search">
-				<input class="search_bar" type="text" v-model="searchArtistKey" placeholder="Search artists">
-				<button class="search_button" v-on:click="search">Search</button>	
-			</div>	 -->
-			<SearchOption  v-model:searchArtistKey="searchArtistKey" @search="searchText" />
-
-			
+			<SearchOption v-model:searchArtistKey="searchArtistKey" @update:searchArtistKey="searchArtistKey = $event"
+				@search="searchText" />
 			<div class="artist_research">
-				<ResearchCard
-					v-for="artist in artistSearchData"
-					:key="artist.id"
-					:name="artist.name"
-					:title="artist.genres[0]"
-					:pictureUrl="artist.images[0].url"
-				/>
-			</div>	
+				<div v-for="artist in artistSearchData" :key="artist.id">
+					<router-link :to="'/' + artist.id">
+						<ResearchCard :name="artist.name" :title="artist.genres[0]" :pictureUrl="artist.images[0].url" />
+					</router-link>
+				</div>
+			</div>
 		</section>
 	</main>
 </template>
@@ -27,115 +72,48 @@ import { searchArtist } from '@/assets/services/api/artistAPI';
 import ResearchCard from './ResearchCard.vue';
 import SearchOption from './SearchOption.vue';
 
-// export default {
-// 	name: "ContentPart",
-// 	components:{
-// 		ResearchCard,
-// 		SearchOption
-// 	},
-// 	data(){
-// 		return {
-// 			searchArtistKey: "",
-// 			artistSearch:"",
-// 			artistSearchData:[]
-// 		};
-
-// 	},
-// 	created(){
-// 		this.searchText()
-// 	},
-// 	methods: {
-// 			search : function() {
-// 				this.searchText()
-// 			},
-// 			async searchText(){
-// 				this.artistSearchData = await searchArtist(this.searchArtistKey)
-// 				this.artistSearchData = this.artistSearchData['artists']['items']
-// 			}
-// 	},
-
-// }
-
 export default {
 	name: "ContentPart",
-	components:{
+	components: {
 		ResearchCard,
 		SearchOption
 	},
-	data(){
+	data() {
 		return {
-			// searchArtistKey: "",
 			searchArtistKey: localStorage.getItem("searchArtistKey") || "",
-			artistSearchData:[]
+			artistSearchData: [],
 		};
 
 	},
-	created(){
+	created() {
 		this.searchText()
 	},
 	methods: {
-			search : function() {
-				this.searchText()
-			},
-			async searchText(){
+		search: function () {
+			this.searchText()
+		},
+		async searchText() {
+			if (this.searchArtistKey) {
+				// this.searchArtistKey = ''
 				this.artistSearchData = await searchArtist(this.searchArtistKey)
 				this.artistSearchData = this.artistSearchData['artists']['items']
 			}
-	},
-
+		}
+	}
 }
-</script> 
+</script>
+
   
+
+
+
 <style scoped>
-
-/* .artist_search {
+.artist_research {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color:#6F4BF2;
-	border-width: 0;
-	border-radius: 20px;
-	margin: 2% 0;
-
-
-}
-.artist_search input[type= "text"]{
-	background: transparent;
-	border-width: 0;
-	outline: none;
-	border-radius: 20px;
-	display: flex;
-	justify-content: center;
-    margin: 0px 0px 0px 12px;
-    padding: 5px 0px 5px 10px;
-	font-family: 'Inter', sans-serif;
-    font-size: 1.2em;
-    width: 60vw;
-	height: 5vh;
-    color: white;
-    display: inline-table;
-    vertical-align: top;
-
+	flex-wrap: wrap;
 }
 
-.search_button {
-    background: #4e2ec2;
-	color: white;
-
-	padding: 25px;
-	border-radius: 20px;
-    border-width: 1px;
-    cursor: pointer;
-    width: auto;
-    height: 5vh;
-	font-size: 1.2em;
-
-} */
-.artist_research{
-	display: flex;
-	flex-wrap:wrap;
-}
-section{
+section {
 	margin: 2% 5%;
 }
 </style>

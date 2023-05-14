@@ -14,7 +14,6 @@ import { getArtistInfo } from '@/assets/services/api/artistAPI';
 export default {
 	name: "ProfilPage",
 	components: {
-		// NavBar,
 		ArtistBan,
 		ArtistPart,
 		FooterPart

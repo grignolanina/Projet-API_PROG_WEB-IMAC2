@@ -1,20 +1,19 @@
 <template>
-      <HeaderPart/>
-      <NavBarLine/>
-      <ContentSearchPart/>
-      <FooterPart/>
+  <HeaderPart />
+  <NavBarLine />
+  <ContentSearchPart />
+  <FooterPart />
 </template>
 
 <script>
 import ContentSearchPart from './components/ContentSearchPart.vue';
-// import NavBar from './components/NavBar.vue';
 import NavBarLine from './components/NavBarLine.vue';
 import HeaderPart from './components/HeaderPart.vue';
 import FooterPart from './components/FooterPart.vue';
 
 export default {
   name: "SearchPage",
-  components: { 
+  components: {
     ContentSearchPart,
     NavBarLine,
     HeaderPart,
@@ -35,5 +34,4 @@ export default {
   display: flex;
   flex-direction: column;
 } */
-
 </style>
