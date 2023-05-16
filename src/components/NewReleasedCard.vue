@@ -27,11 +27,15 @@ export default {
 	flex-direction: row;
 	/* justify-content: space-between; */
 	/* flex: auto; */
-	flex: auto;
+	/* flex: auto; */
 	margin: 1%;
-	/* width: 20vw;
-	height: 20vh; */
 	background-color: #F5F1F8;
+
+	/* sans ça wrap ok */
+	width: 20vw;
+	/* width: 100%; */
+	/* height: 60%; */
+	/*  */
 }
 
 .infos {

@@ -1,17 +1,14 @@
 <template>
-		<NewReleasedGalleryOption v-model:artistSortType="artistSortType"/>
+	<NewReleasedGalleryOption v-model:artistSortType="artistSortType" />
 
-		<div class="artist_gallery">
-			<div v-for="released in newReleaseOrganizeData" :key="released.artists[0].id">
-				<router-link :to="'/'+released.artists[0].id">
-				<NewReleasedCard
-				:name="released.artists[0].name"
-				:title="released.name"
-				:pictureUrl="released.images[0].url"
-				/>
-				</router-link>
-			</div>
+	<div class="artist_gallery">
+		<div v-for="released in newReleaseOrganizeData" :key="released.artists[0].id">
+			<router-link :to="'/' + released.artists[0].id">
+				<NewReleasedCard class="artist_gallery_card" :name="released.artists[0].name" :title="released.name"
+					:pictureUrl="released.images[0].url" />
+			</router-link>
 		</div>
+	</div>
 </template>
 
 <script>
@@ -21,70 +18,76 @@ import NewReleasedGalleryOption from './NewReleasedGalleryOption.vue';
 
 export default {
 	name: "NewReleasedGallery",
-	components: { 
+	components: {
 		NewReleasedCard,
 		NewReleasedGalleryOption
 
 	},
 	computed: {
-		newReleaseOrganizeData: function(){
+		newReleaseOrganizeData: function () {
 			let data = [...this.newReleaseData]
 			const reversed = ["ZAName", "ZATitle"].includes(this.artistSortType)
 
-			if(this.artistSortType =="AZName" || this.artistSortType == "ZAName"){
-				data.sort(function (a,b){ return a.artists[0]["name"].localeCompare(b.artists[0]["name"])})
-			} else{
-				data.sort(function (a,b){ return a["name"].localeCompare(b["name"])})	
+			if (this.artistSortType == "AZName" || this.artistSortType == "ZAName") {
+				data.sort(function (a, b) { return a.artists[0]["name"].localeCompare(b.artists[0]["name"]) })
+			} else {
+				data.sort(function (a, b) { return a["name"].localeCompare(b["name"]) })
 			}
-			if(reversed) data = data.reverse()
+			if (reversed) data = data.reverse()
 			return data
 		}
-		
+
 	},
 
-	data(){
-		return{
-			newReleaseData:[],
+	data() {
+		return {
+			newReleaseData: [],
 			artistSortType: localStorage.getItem("artistSortType") || "AZName"
 
 		}
 	},
-	created(){
+	created() {
 		this.newReleaseInfo()
 	},
 
-	methods:{
-		async newReleaseInfo(){
+	methods: {
+		async newReleaseInfo() {
 			this.newReleaseData = await getNewRelease()
 			this.newReleaseData = this.newReleaseData.albums.items
 		}
 
 	}
-	
+
 
 }
 </script>
 
 <style scoped>
-
 label {
 	color: #6F4BF2;
-	font-weight:500;
+	font-weight: 500;
 }
 
 
 select {
 	margin-left: 1%;
 	padding: 0.5%;
-	color:#F5F1F8;
+	color: #F5F1F8;
 	background: #6F4BF2;
 	border: 0px;
 
 	border-radius: 25px;
 	/* background-color: #; */
 }
+
 .artist_gallery {
 	display: flex;
+	align-items: center;
+	justify-content: space-around;
 	flex-wrap: wrap;
+}
+
+.artist_gallery_card {
+	margin: 5%;
 }
 </style>
