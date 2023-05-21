@@ -31,14 +31,11 @@ export default {
 		async albumArtist(id) {
 			this.albumData = await getAlbums(id)
 			this.albumData = this.albumData['items']
-
 		}
 	}
 
 
 }
-
-//get album of one artist
 </script>
 
 <style scoped>

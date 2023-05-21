@@ -65,7 +65,7 @@ async function getAlbums(id) {
 	let myToken = await getToken()
 
 	let response = await fetch(
-		"https://api.spotify.com/v1/artists/" + id + "/albums?market=FR&limit=6",
+		"https://api.spotify.com/v1/artists/" + id + "/albums?market=FR&limit=8",
 		{
 			method: "GET",
 			headers: {

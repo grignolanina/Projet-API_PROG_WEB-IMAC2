@@ -96,5 +96,20 @@ export default {
 section {
 	margin: 2% 5%;
 }
+
+
+
+@media (max-width: 768px) {
+	.artist_research_card {
+		margin: 2%;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.artist_research_card {
+		margin: 1%;
+	}
+}
 </style>
   

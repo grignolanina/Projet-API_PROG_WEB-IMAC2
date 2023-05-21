@@ -25,15 +25,8 @@ export default {
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;
-	flex: auto;
-	margin: 1%;
 	background-color: #F5F1F8;
-
-	/* sans ça wrap ok */
-	/* width: 10%;
 	width: 20vw;
-	height: 20vh; */
-	/*  */
 }
 
 .infos {
@@ -53,7 +46,6 @@ export default {
 }
 
 .style {
-	/* font-size: 0.2em; */
 	color: #6F4BF2;
 }
 
@@ -63,5 +55,18 @@ h2 {
 
 p {
 	font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+	.artist-card {
+		width: 40vw;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.artist-card {
+		width: 80vw;
+	}
 }
 </style>

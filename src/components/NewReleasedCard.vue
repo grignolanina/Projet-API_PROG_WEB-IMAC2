@@ -25,17 +25,8 @@ export default {
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;
-	/* justify-content: space-between; */
-	/* flex: auto; */
-	/* flex: auto; */
-	margin: 1%;
 	background-color: #F5F1F8;
-
-	/* sans ça wrap ok */
 	width: 20vw;
-	/* width: 100%; */
-	/* height: 60%; */
-	/*  */
 }
 
 .infos {
@@ -55,9 +46,7 @@ export default {
 }
 
 .music-title {
-	/* font-size: 0.2em; */
 	color: #6F4BF2;
-	/* visibility: collapse; */
 }
 
 h2 {
@@ -66,5 +55,19 @@ h2 {
 
 p {
 	font-size: 0.8em;
+}
+
+
+@media (max-width: 768px) {
+	.artist-card {
+		width: 40vw;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.artist-card {
+		width: 80vw;
+	}
 }
 </style>

@@ -90,4 +90,17 @@ select {
 .artist_gallery_card {
 	margin: 5%;
 }
+
+@media (max-width: 768px) {
+	.artist_gallery_card {
+		margin: 2%;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.artist_gallery_card {
+		margin: 1%;
+	}
+}
 </style>
