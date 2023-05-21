@@ -44,8 +44,6 @@ export default {
 			this.artistLoaded = true
 		},
 	}
-
-
 }
 
 </script>

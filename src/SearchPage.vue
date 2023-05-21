@@ -22,16 +22,5 @@ export default {
 }
 </script>
 
-<style>
-/* .test1{
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
-} */
-/* 
-.test2{
-  display: flex;
-  flex-direction: column;
-} */
-</style>
+<style></style>
+

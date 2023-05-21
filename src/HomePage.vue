@@ -1,9 +1,8 @@
 <template>
-    <HeaderPart/>
-    <NavBarLine/>
-    <ContentPart/>
-    <FooterPart/>
-
+  <HeaderPart />
+  <NavBarLine />
+  <ContentPart />
+  <FooterPart />
 </template>
 
 <script>
@@ -14,7 +13,7 @@ import FooterPart from './components/FooterPart.vue';
 
 export default {
   name: "HomePage",
-  components: { 
+  components: {
     ContentPart,
     NavBarLine,
     HeaderPart,
@@ -22,8 +21,4 @@ export default {
   }
 }
 </script>
-
-
-
-<style>
-</style>
+<style></style>

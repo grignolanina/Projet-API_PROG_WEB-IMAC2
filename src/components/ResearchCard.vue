@@ -21,7 +21,6 @@ export default {
 
 <style scoped>
 .artist-card {
-
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;

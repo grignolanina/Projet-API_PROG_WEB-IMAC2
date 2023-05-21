@@ -27,7 +27,6 @@ export default {
 		id: String,
 	},
 	components: {
-		// ArtistBan,
 		MusicInfos,
 		AlbumGallery
 	},
@@ -54,7 +53,6 @@ export default {
 
 		}
 	},
-	//ici bug faut que j'enregistre pour que ça fonctionne
 	mounted() {
 		this.artistInfo(this.id),
 			this.topTrack(this.id)

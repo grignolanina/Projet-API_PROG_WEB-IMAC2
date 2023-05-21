@@ -2,12 +2,15 @@
 	<main>
 		<section>
 			<h2>Welcome</h2>
-			<p>Découvrez une expérience unique grâce à notre site web FYTISPO qui utilise l'API Spotify pour vous offrir un accès facile aux artistes, albums et chansons de la plateforme. Recherchez, explorez et découvrez de la musique sans quitter notre plateforme conviviale et intuitive. Restez à jour avec les dernières nouveautés. Explorez notre bibliothèque musicale dès maintenant.</p>
+			<p>Découvrez une expérience unique grâce à notre site web FYTISPO qui utilise l'API Spotify pour vous offrir un
+				accès facile aux artistes, albums et chansons de la plateforme. Recherchez, explorez et découvrez de la
+				musique sans quitter notre plateforme conviviale et intuitive. Restez à jour avec les dernières nouveautés.
+				Explorez notre bibliothèque musicale dès maintenant.</p>
 		</section>
-		
+
 		<section>
 			<h2>New Release</h2>
-			<NewReleasedGallery/>
+			<NewReleasedGallery />
 		</section>
 	</main>
 </template>
@@ -21,23 +24,23 @@ export default {
 	components: {
 		NewReleasedGallery,
 	},
-	data(){
-		return{
-			newReleaseData:[],
-			artistId:"",
-			artistImageUrl:"",
-			artistName:"",
-			titleName:"",
-			releasedDate:"",
+	data() {
+		return {
+			newReleaseData: [],
+			artistId: "",
+			artistImageUrl: "",
+			artistName: "",
+			titleName: "",
+			releasedDate: "",
 		}
 	},
-	created(){
+	created() {
 		this.newReleaseInfo()
 
 	},
 
-	methods:{
-		async newReleaseInfo(){
+	methods: {
+		async newReleaseInfo() {
 			this.newReleaseData = await getNewRelease()
 			this.newReleaseData = this.newReleaseData.albums.items
 			this.artistId = this.newReleaseData[0].artists.id
@@ -53,11 +56,11 @@ export default {
 </script>
   
 <style scoped>
-section{
+section {
 	margin: 2% 5%;
 }
 
-h2{
+h2 {
 	padding: 1% 0;
 }
 </style>

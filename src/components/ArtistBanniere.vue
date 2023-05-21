@@ -58,8 +58,6 @@ button {
 	margin: 2%;
 	color: white;
 	background-color: #6F4BF2;
-	/* text-shadow: #6F4BF2 2px 2px 5px; */
-
 }
 
 .back:hover {
@@ -70,15 +68,12 @@ button {
 	color: white;
 	padding: 1% 0;
 	margin: 2%;
-	/* background-color: black; */
 	text-shadow: 3px 3px #6F4BF2, #6F4BF2 2px 2px 5px;
 }
 
 .artist-auditor {
 	color: white;
-	/* background-color: black; */
 	text-shadow: #6F4BF2 2px 2px 5px;
-	/* text-shadow:0 2px 0 #6F4BF2, 0 -2px 0 #4bc0f2; */
 	margin: 2% 2%;
 }
 </style>

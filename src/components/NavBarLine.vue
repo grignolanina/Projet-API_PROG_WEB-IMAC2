@@ -1,25 +1,25 @@
 <template>
-	<nav class="nav-background">
+  <nav class="nav-background">
     <ul class="nav-list">
       <li class="nav-list-elem"><router-link to="/">Home</router-link></li>
       <li class="nav-list-elem"><router-link to="/SearchPage">Explore</router-link></li>
     </ul>
-	</nav>
+  </nav>
 </template>
 <script>
 export default {
-	name: "NavBarLine"
+  name: "NavBarLine"
 }
 </script>
 <style scoped>
-.nav-background{
+.nav-background {
   display: flex;
   background: #F5F1F8;
   width: 100%;
   justify-content: center;
 }
 
-.nav-list{
+.nav-list {
   display: flex;
   list-style-type: none;
   justify-content: center;
@@ -28,11 +28,11 @@ export default {
   padding: 1%;
 }
 
-.nav-list-elem{
+.nav-list-elem {
   padding: 0 25%;
 }
 
-.nav-list a:hover{
-  color:#6F4BF2;
+.nav-list a:hover {
+  color: #6F4BF2;
 }
 </style>

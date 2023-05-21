@@ -75,9 +75,7 @@ select {
 	color: #F5F1F8;
 	background: #6F4BF2;
 	border: 0px;
-
 	border-radius: 25px;
-	/* background-color: #; */
 }
 
 .artist_gallery {
