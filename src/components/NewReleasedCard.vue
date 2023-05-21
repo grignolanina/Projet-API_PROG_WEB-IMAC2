@@ -21,12 +21,17 @@ export default {
 
 <style scoped>
 .artist-card {
-
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;
 	background-color: #F5F1F8;
 	width: 20vw;
+}
+
+.artist-card:hover {
+	transform: scale(1.03);
+	transition: transform 0.3s ease;
+	background-color: #ac97f9;
 }
 
 .infos {
@@ -48,6 +53,8 @@ export default {
 .music-title {
 	color: #6F4BF2;
 }
+
+
 
 h2 {
 	font-size: 1em;

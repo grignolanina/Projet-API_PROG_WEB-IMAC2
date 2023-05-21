@@ -28,6 +28,12 @@ export default {
 	width: 20vw;
 }
 
+.artist-card:hover {
+	transform: scale(1.03);
+	transition: transform 0.3s ease;
+	background-color: #ac97f9;
+}
+
 .infos {
 	display: flex;
 	flex: auto;

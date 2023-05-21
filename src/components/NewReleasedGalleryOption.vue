@@ -28,4 +28,29 @@ export default {
 	}
 }
 </script>
-<style scoped></style>
+<style scoped>
+.artist-gallery-option {
+	display: flex;
+	align-items: center;
+}
+
+.artist-gallery-option label {
+	margin-right: 1%;
+}
+
+.artist-gallery-option select {
+	padding: 5px;
+	border: none;
+	background-color: #6F4BF2;
+	color: white;
+	font-size: 14px;
+	border-radius: 15px;
+	padding: 1%;
+}
+
+.artist-gallery-option select option {
+	background-color: #ac97f9;
+	color: #6F4BF2;
+	font-size: 14px;
+}
+</style>
