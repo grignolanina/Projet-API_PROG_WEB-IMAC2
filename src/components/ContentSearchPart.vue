@@ -34,15 +34,16 @@ export default {
 		};
 
 	},
-	// beforeRouteEnter(to, from, next) {
-	// 	next(vm => {
-	// 		vm.reset()
-	// 	})
-	// },
 	created() {
-		this.searchText()
+		this.resetSearchArtistKey();
+		this.searchText();
 	},
 	methods: {
+		resetSearchArtistKey() {
+			this.searchArtistKey = '';
+			localStorage.removeItem('searchArtistKey');
+		},
+
 		search: function () {
 			this.searchText()
 		},
@@ -52,12 +53,7 @@ export default {
 				this.artistSearchData = await searchArtist(this.searchArtistKey)
 				this.artistSearchData = this.artistSearchData['artists'].items
 			}
-		},
-		// reset() {
-		// 	this.artistSearchData = []
-		// 	this.searchArtistKey = ""
-		// },
-
+		}
 	},
 	computed: {
 		//Manage of the url undefined
