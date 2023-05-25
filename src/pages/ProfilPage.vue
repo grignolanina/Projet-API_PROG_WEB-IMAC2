@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import ArtistPart from './components/ArtistPart.vue';
-import ArtistBan from './components/ArtistBanniere.vue';
-import FooterPart from './components/FooterPart.vue';
-import { getArtistInfo } from '@/assets/services/api/artistAPI';
+import ArtistPart from '../components/ArtistPart.vue';
+import ArtistBan from '../components/ArtistBanniere.vue';
+import FooterPart from '../components/FooterPart.vue';
+import { getArtistInfo } from '@/services/api/artistAPI';
 
 
 export default {

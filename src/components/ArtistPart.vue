@@ -16,8 +16,8 @@
 <script>
 import AlbumGallery from './AlbumGallery.vue';
 import MusicInfos from './MusicInfos.vue';
-import { getArtistInfo } from '@/assets/services/api/artistAPI';
-import { getTopTrack } from '@/assets/services/api/artistAPI';
+import { getArtistInfo } from '@/services/api/artistAPI';
+import { getTopTrack } from '@/services/api/artistAPI';
 
 
 

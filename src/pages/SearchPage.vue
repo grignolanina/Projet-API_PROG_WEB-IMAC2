@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import ContentSearchPart from './components/ContentSearchPart.vue';
-import NavBarLine from './components/NavBarLine.vue';
-import HeaderPart from './components/HeaderPart.vue';
-import FooterPart from './components/FooterPart.vue';
+import ContentSearchPart from '../components/ContentSearchPart.vue';
+import NavBarLine from '../components/NavBarLine.vue';
+import HeaderPart from '../components/HeaderPart.vue';
+import FooterPart from '../components/FooterPart.vue';
 
 export default {
   name: "SearchPage",

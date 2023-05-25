@@ -7,7 +7,7 @@
 </template>
 <script>
 import AlbumInfos from './AlbumInfos.vue';
-import { getAlbums } from '@/assets/services/api/artistAPI';
+import { getAlbums } from '@/services/api/artistAPI';
 
 
 export default {

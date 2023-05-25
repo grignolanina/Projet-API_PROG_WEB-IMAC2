@@ -17,7 +17,7 @@
   
 <script>
 import NewReleasedGallery from './NewReleasedGallery.vue';
-import { getNewRelease } from '@/assets/services/api/artistAPI';
+import { getNewRelease } from '@/services/api/artistAPI';
 
 export default {
 	name: "ContentPart",

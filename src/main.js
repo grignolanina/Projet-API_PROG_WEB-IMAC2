@@ -3,9 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 
 //
-import HomePage from './HomePage.vue'
-import SearchPage from './SearchPage.vue'
-import ProfilePage from './ProfilPage.vue'
+import HomePage from './pages/HomePage.vue'
+import SearchPage from './pages/SearchPage.vue'
+import ProfilePage from './pages/ProfilPage.vue'
 
 const routes = [
 	{
@@ -22,8 +22,6 @@ const routes = [
 		path: '/:id',
 		component: ProfilePage,
 		name: 'ProfilePage',
-
-		// props: true
 	},
 
 ]

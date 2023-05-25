@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { getNewRelease } from '@/assets/services/api/artistAPI';
+import { getNewRelease } from '@/services/api/artistAPI';
 import NewReleasedCard from './NewReleasedCard.vue';
 import NewReleasedGalleryOption from './NewReleasedGalleryOption.vue';
 

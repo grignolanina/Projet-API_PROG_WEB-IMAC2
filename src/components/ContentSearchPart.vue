@@ -17,7 +17,7 @@
 </template>
   
 <script>
-import { searchArtist } from '@/assets/services/api/artistAPI';
+import { searchArtist } from '@/services/api/artistAPI';
 import ResearchCard from './ResearchCard.vue';
 import SearchOption from './SearchOption.vue';
 
